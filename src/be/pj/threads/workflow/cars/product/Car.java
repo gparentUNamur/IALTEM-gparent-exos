@@ -1,4 +1,4 @@
-package be.pj.threads.workflow.product;
+package be.pj.threads.workflow.cars.product;
 
 public class Car {
     private boolean motor = false;

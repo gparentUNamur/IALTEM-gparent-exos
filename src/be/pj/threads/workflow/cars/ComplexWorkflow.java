@@ -1,11 +1,11 @@
-package be.pj.threads.workflow;
+package be.pj.threads.workflow.cars;
 
 import be.pj.threads.common.Queue;
-import be.pj.threads.workflow.product.Car;
-import be.pj.threads.workflow.tasks.TaskFrame;
-import be.pj.threads.workflow.tasks.TaskGearbox;
-import be.pj.threads.workflow.tasks.TaskMotor;
-import be.pj.threads.workflow.tasks.TaskWheel;
+import be.pj.threads.workflow.cars.product.Car;
+import be.pj.threads.workflow.cars.tasks.TaskFrame;
+import be.pj.threads.workflow.cars.tasks.TaskGearbox;
+import be.pj.threads.workflow.cars.tasks.TaskMotor;
+import be.pj.threads.workflow.cars.tasks.TaskWheel;
 
 public class ComplexWorkflow {
     public static void main(String[] args) {

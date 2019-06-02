@@ -1,7 +1,7 @@
-package be.pj.threads.workflow;
+package be.pj.threads.workflow.cars;
 
 import be.pj.threads.common.Queue;
-import be.pj.threads.workflow.product.Car;
+import be.pj.threads.workflow.cars.product.Car;
 
 public class CarCreator implements Runnable {
     private Queue<Car> queue;

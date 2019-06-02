@@ -1,10 +1,10 @@
-package be.pj.threads.workflow.tasks;
+package be.pj.threads.workflow.cars.tasks;
 
 import be.pj.threads.common.Queue;
-import be.pj.threads.workflow.product.Car;
+import be.pj.threads.workflow.cars.product.Car;
 
-public class TaskFrame extends Task {
-    public TaskFrame(String name, long duration, Queue<Car> in, Queue<Car> out) {
+public class TaskGearbox extends Task {
+    public TaskGearbox(String name, long duration, Queue<Car> in, Queue<Car> out) {
         super(name, duration, in, out);
     }
 
@@ -17,7 +17,7 @@ public class TaskFrame extends Task {
                 Thread.sleep(this.duration);
             } catch (InterruptedException ignored) {
             }
-            c.setFrame();
+            c.setGearbox();
             this.out.addElement(c);
         }
     }

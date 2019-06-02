@@ -1,7 +1,7 @@
-package be.pj.threads.workflow.tasks;
+package be.pj.threads.workflow.cars.tasks;
 
 import be.pj.threads.common.Queue;
-import be.pj.threads.workflow.product.Car;
+import be.pj.threads.workflow.cars.product.Car;
 
 public abstract class Task implements Runnable {
 
