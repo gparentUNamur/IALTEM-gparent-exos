@@ -1,4 +1,4 @@
-package be.pj.patterns.visitor;
+package be.pj.patterns.observer;
 
 import java.util.HashSet;
 import java.util.Set;

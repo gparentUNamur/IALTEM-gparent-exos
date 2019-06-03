@@ -1,4 +1,4 @@
-package be.pj.patterns.visitor;
+package be.pj.patterns.observer;
 
 public class SampleVisitor {
     public static void main(String[] args) {

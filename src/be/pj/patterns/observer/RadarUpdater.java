@@ -1,4 +1,4 @@
-package be.pj.patterns.visitor;
+package be.pj.patterns.observer;
 
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
