@@ -12,8 +12,12 @@ public class Account {
         this.printInfo();
     }
 
-    public void add(int amount) {
+    public synchronized void add(int amount) {
         this.amount += amount;
+        try {
+            wait(500);
+        } catch (InterruptedException ignored) {
+        }
         this.printInfo();
     }
 

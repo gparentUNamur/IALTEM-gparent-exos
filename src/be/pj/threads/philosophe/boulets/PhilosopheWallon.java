@@ -21,16 +21,19 @@ public class PhilosopheWallon implements Runnable {
     @Override
     public void run() {
         while (this.semaphore.availablePermits() != 0) {
-            Boulet b = droite.getElement(this.semaphore);
-            if (b != null && b.isWarm()) {
-                System.out.printf("%s eat a Boulet\nValue of semaphore : %d\n", this.name, this.semaphore.availablePermits());
-                try {
-                    this.semaphore.acquire();
-                } catch (InterruptedException ignored) {
+            synchronized (this.semaphore) {
+                Boulet b = droite.getElement(this.semaphore);
+                if (b != null && b.isWarm()) {
+                    try {
+                        this.semaphore.acquire();
+                    } catch (InterruptedException ignored) {
+                    }
+                    System.err.printf("%s eat a Boulet\nValue of semaphore : %d\n", this.name, this.semaphore.availablePermits());
+
+                } else if (b != null) {
+                    System.out.printf("%s has a  cold Boulet, set in the left Casserole\nValue of semaphore : %d\n", this.name, this.semaphore.availablePermits());
+                    gauche.addElement(b);
                 }
-            } else if (b != null) {
-                System.out.printf("%s has a  cold Boulet, set in the left Casserole\nValue of semaphore : %d\n", this.name, this.semaphore.availablePermits());
-                gauche.addElement(b);
             }
         }
         System.out.println(this.name + " Finished, Value of semaphore : " + this.semaphore.availablePermits());

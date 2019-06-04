@@ -9,8 +9,8 @@ public class Casserole {
     private ArrayList<Boulet> boulets = new ArrayList<>();
 
     public synchronized Boulet getElement(Semaphore s) {
-        while (s.availablePermits() != 0) {
-            if (boulets.isEmpty()) {
+
+        if (boulets.isEmpty()) {
                 try {
                     wait(100);
                 } catch (InterruptedException e) {
@@ -19,7 +19,6 @@ public class Casserole {
             } else {
                 return boulets.remove(0);
             }
-        }
         return null;
     }
 
